@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/css/splide.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      @media screen and (max-width:320px) {
+        .form-control{
+          width: 110px;
+        }
+        
+        #navbar .p-2{
+          font-size: 10px;
+          font-weight: bolder;
+          
+        }
+        #navbar .nav-link {
+          font-size: 10px;
+          font-weight: bolder;
+        }
+       
+  
+        .container .splide__track{
+          width: 700px;
+         
+        }
+        .container .splide .card-body{
+          width: 300px;
+         
+          padding-right: 100px;
+          margin-right:200px ;
+        }
+
+      
+        .container .splide .card-body img {
+          width: 200px;
+      
+         
+        }
+        .container .splide .card-body .card-title{
+          font-size: 10px;
+        }
+
+
+      }
+#music{
+  width: 150px;
+  height: 30px;
+  /* margin-right: 100px; */
+ padding-right: 30px;
+}
+ 
+    </style>
+
+
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg  navbar-dark bg-dark text-white ps-5" >
+        <div class="container-fluid">
+       
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <img src="logo.png " alt="" width="100px" >
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            
+            <form class="d-flex ms-5  me-5" style="margin-right: 45rem;" >
+              <input class="form-control  w-10" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success ps- ms-3 " type="submit" >Search</button >
+            </form>
+            <li class="nav-item ms-5 " style="list-style: none;margin-right: 45rem;">
+              <i class="bi bi-person"></i>
+              <!-- <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
+              </svg> -->
+              </li>
+
+            <!-- Button trigger modal -->
+<p data-bs-toggle="modal" class="pt-3" data-bs-target="#exampleModal">
+  Login/Sign Up
+</p>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+     
+      <div class="modal-body bg-dark">
+        <form>
+          <div class="mb-3">
+            <img src="logo.png" alt="" style="padding-left: 20%;">
+            <h2>Login/Sign Up</h2>
+            <h5>Get a personalised experience, and access all your music</h5>
+            <label for="exampleInputEmail1" class="form-label">Email</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+           
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1">
+          </div>
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+      
+    </div>
+  </div>
+</div>
+              </li>
+          </div>
+        </div>
+      </nav>
+<!-- /------------------------------------------------second nav -->
+<div id="navbar" class="d-flex flex-row bd-highlight bg-light shadow-lg p-3 mb-5  text-secondary rounded justify-content-around fs-5  mb-3">
+    <div class="p-2 bd-highlight"><a href="#">All</a></div>
+    <div class="p-2 bd-highlight"><a href="#carouselExampleInterval">Trending </a></div>
+    <div class="p-2 bd-highlight"><a href="#New Releases">New </a></div>
+    <div class="p-2 bd-highlight" > <a class="list" href="#Old Songs">Old </a></div>
+    <div class=" nav-item dropdown ">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Top Artist
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <div><a class="dropdown-item" href="#">Arijit Singh</a></div>
+          <div><a class="dropdown-item" href="#">Sonu Nigam</a></div>
+          <div><a class="dropdown-item" href="#">Lata Mangeshkar</a></div>
+        </ul>
+      </div>
+      <div class="p-2 bd-highlight"><a class="list" href="#Radio">Radio</a></div>
+  </div>
+
+<!-- ----------------------------------------------------slids -->
+<div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active " data-bs-interval="10000">
+        <img src="https://img.wynk.in/unsafe/880x307/filters:no_upscale():strip_exif():format(webp)/https://s3.ap-south-1.amazonaws.com/discovery-prod-arsenal/arsenal/artworks/65a68ec7ed7dad04b5a74e4e/BANNER_94879319150057.png" class="d-block w-100 h-100" alt="...">
+      </div>
+      <div class="carousel-item" data-bs-interval="2000">
+        <img src="https://img.wynk.in/unsafe/880x307/filters:no_upscale():strip_exif():format(webp)/https://s3.ap-south-1.amazonaws.com/discovery-prod-arsenal/arsenal/artworks/6687f62b1033d22d67e3e73c/BANNER_25967821354692.jpg" class="d-block w-100 h-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="https://img.wynk.in/unsafe/880x307/filters:no_upscale():strip_exif():format(webp)/https://s3.ap-south-1.amazonaws.com/discovery-prod-arsenal/arsenal/artworks/668d068736a7d632f342d85c/BANNER_10189274817548.jpg" class="d-block w-100 h-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+<!------------------------------------------------- card-img -->
+<section style="background-color: black;">
+    <br>
+    <h3 id="New Releases" style="text-align: center; color: azure;  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ; font-size: 30px;">
+        New Releases
+    </h3>
+        <div class="container" style="width:100%; height: 100%;">
+            <div class="row">
+                <div class="splide">
+                    <div class="splide__track">
+                        <div class="splide__list">
+                            <div class="col-sm-4 splide__slide m-2">
+                                <div class="card bg-dark text-white">
+                                    <div class="card-body" >
+                                        <img src="https://img.wynk.in/unsafe/248x248/filters:no_upscale():strip_exif():format(webp)/http://s3.ap-south-1.amazonaws.com/discovery-prod-arsenal/arsenal/artworks/66976e6c33ae78103cb6bec1/COLLECTION_11880474263527.png" alt="" style=" padding-left: 80px ;">
+                                        <h5 class="card-title  text-center">New Hindi Songs </h5>
+                                    
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 splide__slide m-2">
+                                <div class="card bg-dark text-white">
+                                    <div class="card-body">
+                                        <img src="https://img.wynk.in/unsafe/248x248/filters:no_upscale():strip_exif():format(webp)/http://s3.ap-south-1.amazonaws.com/wynk-music-cms/srch_timesmusic/2024-07/01/11-36/8902633356702.jpg" alt="" style="padding-left: 80px">
+                                        <h5 class="card-title text-center">Sarfira</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 splide__slide m-2">
+                                <div class="card bg-dark text-white">
+                                    <div class="card-body">
+                                        <img src="https://img.wynk.in/unsafe/248x248/filters:no_upscale():strip_exif():format(webp)/http://s3.ap-south-1.amazonaws.com/wynk-music-cms/srch_hungama/8902894362351_20240708194811/8902894362351/1720449309420/resources/8902894362351.jpg" alt=""  style="padding-left: 80px">
+                                        <h5 class="card-title  text-center">Wild Wild Punjab</h5>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 splide__slide m-2">
+                                <div class="card bg-dark text-white">
+                                    <div class="card-body">
+                                        <img src="https://img.wynk.in/unsafe/248x248/filters:no_upscale():strip_exif():format(webp)/http://s3.ap-south-1.amazonaws.com/wynk-music-cms/srch_hungama/8902894362344_20240615184408/8902894362344/1718458204569/resources/8902894362344.jpg" alt="" style="padding-left: 80px">
+                                        <h5 class="card-title  text-center">Chandu Champion</h5>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 splide__slide m-2">
+                                <div class="card bg-dark text-white">
+                                    <div class="card-body">
+                                        <img src="https://img.wynk.in/unsafe/248x248/filters:no_upscale():strip_exif():format(webp)/http://s3.ap-south-1.amazonaws.com/wynk-music-cms/srch_sonymusic/A10301A00053301174_20240704082953933/1720075810912/resources/A10301A00053301174.jpg" alt="" style="padding-left: 80px">
+                                        <h5 class="card-title  text-center">Kill</h5>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 splide__slide m-2">
+                                <div class="card bg-dark text-white">
+                                    <div class="card-body">
+                                        <img src="https://img.wynk.in/unsafe/248x248/filters:no_upscale():strip_exif():format(webp)/http://s3.ap-south-1.amazonaws.com/wynk-music-cms/srch_ingrooves/20240613071022093/198704023262/1718289941359/resources/198704023262.jpg" alt="" style="padding-left: 80px">
+                                        <h5 class="card-title text-center">Shikayt</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/js/splide.min.js"></script>
+        <script>
+            var splide = new Splide('.splide', {
+                type: 'loop',
+                perPage: 3,
+                rewind: true,
+            });
+    
+            splide.mount();
+        </script>
+        </section>
+       
+<section>
+        <h3 id="Old Songs" style=" color: rgb(0, 0, 0);  margin-top: 9%; font-weight: bolder; padding-left: 10%; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ; font-size: 30px;">
+          Old Songs
+      </h3>
+        
+        <div class="row row-cols-1 row-cols-md-4 g-4 mt-5 " style="padding-left:10%;">
+          <div class="col ">
+            <div class="card h-60 w-50 ">
+              <img src="https://img.wynk.in/unsafe/248x248/filters:no_upscale():strip_exif():format(webp)/http://s3-ap-south-1.amazonaws.com/wynk-music-cms/music/Rishi-Kapoor-300x300.png" class="card-img-top " alt="...">
+              <div class="card-body ">
+                <h5 class="card-title">Hits of Rishi Kapoor</h5>
+                <audio id="music" controls>
+                  <source src="Badumbaaa_-_102_Not_Out_128_Kbps.mp3">
+                </audio>
+                
+            
+
+               
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-60 w-50 ">
+              <img src="https://img.wynk.in/unsafe/248x248/filters:no_upscale():strip_exif():format(webp)/http://s3.ap-south-1.amazonaws.com/discovery-prod-arsenal/arsenal/artworks/5f882f828ea0a641d39e6a6e/COLLECTION_1790285141973267.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">90s Wali Aashiqui</h5>
+                <audio id="music" controls>
+            
+            <source src="Ek_Ladki_Ko_Dekha_-_Music_-_1942_A_Love_Story_Sing_Along_128_Kbps.mp3" type="audio/mpeg">
+
+          </audio>
+      
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-60 w-50 ">
+              <img src="https://img.wynk.in/unsafe/248x248/filters:no_upscale():strip_exif():format(webp)/http://s3.ap-south-1.amazonaws.com/discovery-prod-arsenal/arsenal/artworks/65a6bd8a3f6ffd03190f6968/COLLECTION_118240779722422.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Hits Of Rajesh Khanna</h5>
+                <audio id="music" controls>
+            
+            <source src="Barsa_Re_Barsa_-_Aag_Aur_Shola_128_Kbps.mp3" type="audio/mpeg">
+
+          </audio>
+            
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-60 w-50 ">
+              <img src="https://img.wynk.in/unsafe/248x248/filters:no_upscale():strip_exif():format(webp)/http://s3-ap-south-1.amazonaws.com/wynk-music-cms/music/kapoor-sons-300x300.png" class="card-img-top rounded-circle" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Kapoor Classics</h5>
+                <audio  id="music" controls>
+            
+            <source src="Chhoti_Si_Yeh_Zindagani_-_Aah_128_Kbps.mp3" type="audio/mpeg">
+
+          </audio>
+
+              </div>
+            </div>
+          </div>
+         
+
+          </section>
+          <section id="Radio">
+            <h3 style=" color: rgb(0, 0, 0);  margin-top: 9%; font-weight: bolder; padding-left: 10%; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ; font-size: 30px;">
+              Radio
+          </h3>
+
+            <div class="row row-cols-1 row-cols-md-4 g-4 mt-5 " style="padding-left:10%;">
+         
+        
+          <div class="col">
+            <div class="rounded-circle" >
+              <img src="https://a10.gaanacdn.com/gn_img/g_radio_circle/Dk9KNk23Bx/Dk9KN4qWBx/size_m_1718713138.webp" class="card-img-top w-50 rounded-circle" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Chupe Rustam
+                </h5>
+                <audio id="music" controls>
+            
+            <source src="Badumbaaa_-_102_Not_Out_128_Kbps.mp3" type="audio/mpeg">
+
+          </audio>
+
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="rounded-circle ">
+              <img src="https://a10.gaanacdn.com/gn_img/g_radio_circle/qa4WEqWP1p/qa4WEm8WP1/size_m_1716496375.webp" class="card-img-top w-50 rounded-circle" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Love Songs (Punjabi)
+                </h5>
+                <audio id="music" controls>
+            
+            <source src="Badumbaaa_-_102_Not_Out_128_Kbps.mp3" type="audio/mpeg">
+
+          </audio>
+
+              </div>
+            </div>
+          </div>
+          <div class="col" >
+            <div class="rounded-circle ">
+              <img src="https://a10.gaanacdn.com/gn_img/g_radio_circle/DwPKOxB3qV/DwPKOwkKqV/size_m_1716496066.webp" class="card-img-top w-50 rounded-circle" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Party Non Stop
+                </h5>
+                <audio id="music" controls>
+            
+            <source src="Badumbaaa_-_102_Not_Out_128_Kbps.mp3" type="audio/mpeg">
+
+          </audio>
+
+              </div>
+            </div>
+          </div>
+          <div class="col ">
+            <div class="rounded-circle">
+              <img src="https://a10.gaanacdn.com/gn_img/g_radio_circle/MmqK5pEbwR/MmqK5xvbwR/size_m_1717143588.webp" class="card-img-top w-50 rounded-circle" alt="...">
+              <div class="card-body ">
+                <h5 class="card-title">90s Chupe Rustam</h5>
+                <audio id="music" controls>
+            
+            <source src="Badumbaaa_-_102_Not_Out_128_Kbps.mp3" type="audio/mpeg">
+
+          </audio>
+               
+              </div>
+            </div>
+          </div>
+        </div>
+</div>
+      </section>
+
+
+
+
+
+      <!--------------------------------------- <footer></footer> -->
+      <!-- Footer -->
+<footer class="text-center text-lg-start bg-dark bg-body-tertiary text-muted">
+  <!-- Section: Social media -->
+  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+    <!-- Left -->
+    <div class="me-5 d-none d-lg-block">
+      <span>Get connected with us on social networks:</span>
+    </div>
+    <!-- Left -->
+   
+    <!-- Right -->
+    <div>
+      <a href="" class="me-4 text-reset">
+        <i class="fa fa-facebook-f"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fa fa-twitter"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fa fa-google"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fa fa-instagram"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fa fa-linkedin"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fa fa-github"></i>
+      </a>
+    </div>
+    <!-- Right -->
+  </section>
+  <!-- Section: Social media -->
+
+  <!-- Section: Links  -->
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            <i class="fa fa-gem me-3"></i>Company name
+          </h6>
+          <p>
+            Here you can use rows and columns to organize your footer content. Lorem ipsum
+            dolor sit amet, consectetur adipisicing elit.
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Products
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Angular</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">React</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Vue</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Laravel</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Useful links
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Pricing</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Settings</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Orders</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Help</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+          <p><i class="fa fa-home me-3"></i> New York, NY 10012, US</p>
+          <p>
+            <i class="fa fa-envelope me-3"></i>
+            info@example.com
+          </p>
+          <p><i class="fa fa-phone me-3"></i> + 01 234 567 88</p>
+          <p><i class="fa fa-print me-3"></i> + 01 234 567 89</p>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+    </div>
+  </section>
+  <!-- Section: Links  -->
+
+  <!-- Copyright -->
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+    © 2021 Copyright:
+    <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+
+</body>
+</html>
